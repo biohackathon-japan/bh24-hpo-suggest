@@ -20,7 +20,7 @@ authors:
     orcid: 0000-0001-5050-2509
     affiliation: 4
 affiliations:
-  - name: xxx
+  - name: International Laboratory for Human Genome Research, Laboratorio Internacional de Investigación sobre el Genoma Humano, Universidad Nacional Autónoma de México, Mexico City 76230, Mexico
     index: 1
   - name: Tokyo City University, Tokyo, Japan
     index: 2
@@ -60,8 +60,33 @@ To address this challenge, we developed a new tool designed to recommend HPO ter
 
 # Method
 
+- **Data Preprocessing**
 
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
+  - **Data Collection**
+    - We utilized two primary data sources:  
+      - *PubCaseFinder* query logs  
+      - *Human Phenotype Ontology (HPO)* annotations  
+    - We extracted:
+      - 71,029 queries from the PubCaseFinder logs, covering the period from **June 8, 2021 to August 26, 2024**
+      - 12,629 HPO annotations of rare diseases [@citation:robinson2008human]
+
+  - **Data Collapsing**
+    - To eliminate biases in our queries due to user repetition, we conducted the following process:
+      - Find queries that start with the same **N** terms (N = 1 or 2)
+      - For the lines in the queries:
+        - Sort them
+        - Remove full duplicate lines
+        - Remove lines that are complete prefixes of the next line
+
+- **Training and Test Datasets**
+
+  - **Training Datasets**
+    - *Training dataset 1*: Collapsed file from the period of **2021–2023**
+    - *Training dataset 2*: Training dataset 1 + collapsed file from **January 1, 2024 to May 2, 2024**
+    - *Training dataset 3*: Training dataset 1 + HPO annotation file
+
+  - **Test Dataset**
+    - Queries from the collapsed file from **May 2, 2024 to August 26, 2024**
 
 ## Data Preprocessing
 To eliminate biases of overrepresented HPO terms in the PubCaseFinder queries, we eliminate duplicated lines and lines that were complete prefixes of other lines, which would indicate that they were lines written by the same user while creating an adequate query for them. The step of user-curated HPO terms is what we want to optimize by generating a suggestion tool for the PubCaseFinder browser.

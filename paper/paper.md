@@ -59,14 +59,12 @@ To address this challenge, we developed a new tool designed to recommend HPO ter
 
 
 # Method
-## The methods employed included the following steps:
 
-### Data Preprocessing
+## Data Preprocessing
 
 **Data Collection:**  
-We utilized two primary data sources: PubCaseFinder query logs and Human Phenotype Ontology (HPO) annotations.  
-We extracted 71,029 queries from the PubCaseFinder logs, covering the period from June 8, 2021, to August 26, 2024.  
-We also used 12,629 HPO annotations of rare diseases [@citation:robinson2008human].
+
+We employed two main data sources: PubCaseFinder query logs and annotations from the Human Phenotype Ontology (HPO). From the PubCaseFinder logs, we extracted 71,029 queries between June 8, 2021, and August 26, 2024. Additionally, we incorporated 12,629 HPO annotations related to rare diseases  [@citation:robinson2008human].
 
 **Data Collapsing:**  
 To eliminate biases due to user repetition, we conducted the following steps:

@@ -76,7 +76,8 @@ To eliminate biases due to user repetition, we conducted the following steps:
         - Remove prefix lines  
 
 **Training Datasets:**  
-    - For the training of our models, we used three different datasets:
+
+   - For the training of our models, we used three different datasets:
         - Training dataset 1: collapsed file from 2021–2023.
         - Training dataset 2: Training dataset 1 + collapsed file from January 1, 2024 to May 2, 2024.
         - Training dataset 3: Training dataset 1 + HPO annotation file.

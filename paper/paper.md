@@ -60,7 +60,7 @@ To address this challenge, we developed a new tool designed to recommend HPO ter
 
 # Method
 
-## Data Preprocessing
+## 1. Data Preprocessing
 
 **Data Collection:**  
 
@@ -75,19 +75,14 @@ To eliminate biases due to user repetition, we conducted the following steps:
         - Remove duplicates  
         - Remove prefix lines  
 
-
-
-### Training and Test Datasets
-
 **Training Datasets:**  
-For the training of our models, we used three different datasets:
-
-- Training dataset 1: collapsed file from 2021–2023.
-- Training dataset 2: Training dataset 1 + collapsed file from January 1, 2024 to May 2, 2024.
-- Training dataset 3: Training dataset 1 + HPO annotation file.
+- For the training of our models, we used three different datasets:
+  - Training dataset 1: collapsed file from 2021–2023.
+  - Training dataset 2: Training dataset 1 + collapsed file from January 1, 2024 to May 2, 2024.
+  - Training dataset 3: Training dataset 1 + HPO annotation file.
 
 **Test Dataset:**  
-In the case of the test dataset, we used queries from the collapsed file from May 2, 2024 to August 26, 2024.
+We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
 
 

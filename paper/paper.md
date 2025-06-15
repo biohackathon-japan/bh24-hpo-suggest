@@ -69,13 +69,15 @@ We extracted 71,029 queries from the PubCaseFinder logs, covering the period fro
 We also used 12,629 HPO annotations of rare diseases [@citation:robinson2008human].
 
 **Data Collapsing:**  
-To eliminate biases in our queries due to user-repetition, we conducted the following process:
+To eliminate biases due to user repetition, we conducted the following steps:
 
-- Find queries that start with the same N terms (N = 1 or 2)
-- For the lines in the queries:
-    - Sort
-    - Remove full duplicate lines
-    - Remove lines that are complete prefixes of the next
+    - Find queries that start with the same N terms (N = 1 or 2)  
+    - Then:  
+        - Sort the lines  
+        - Remove duplicates  
+        - Remove prefix lines  
+
+
 
 ### Training and Test Datasets
 

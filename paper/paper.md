@@ -85,17 +85,20 @@ To eliminate biases due to user repetition, we conducted the following steps:
 **Test Dataset:**  
 We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
-![Fig. 1. Data preprocessing and generation of data collection](./images/Data_preprocessing.png)
+![Data preprocessing and generation of data collection](./images/Data_preprocessing.png)
+
+## 2. Models employed
+
+### Co-occurrence Analysis
+![Co-ocurrence model constructions using the three training datasets](./images/Co-ocurrence_model.png)
+
+### Word2Vec Model
 
 
-Please keep sections to a maximum of only two levels.
 
-## Co-occurrence Analysis
-
-Please keep sections to a maximum of only two levels.
 
 ## Evaluation
-![Method analysis image](./method_analysis.png)
+![Method analysis image](./images/method_analysis.png)
 
 
 # Result

@@ -98,6 +98,15 @@ We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
 
 ## Evaluation
+
+To evaluate the performance of our models after training with different datasets, we employed two validation strategies using the test dataset **(Fig. 3)**. 
+
+The first approach considered the order of the elements within each query. We then input each HPO term from the query into the model and assessed whether the next term in the query was part of the top-k predicted terms. 
+
+In contrast, the second evaluation approach depended on the order of the terms in the query. For each query, we iteratively give one term at a time as input to the model and verify whether any of the remaining terms of the query on evaluation were part of the predicted terms.
+
+These two evaluation approaches allowed us to compare the importance of the term order on the model’s prediction performance and validate whether the prediction was order-dependent or irrelevant to the prediction accuracy. 
+
 ![Method analysis image](./images/method_analysis.png)
 
 

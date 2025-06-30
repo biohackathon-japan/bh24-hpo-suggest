@@ -110,9 +110,19 @@ These two evaluation approaches allowed us to compare the importance of the term
 ![Method analysis image](./images/method_analysis.png)
 
 
-# Result
+# Results
+## Data Preprocessing
+### Data Collection
+During data preprocessing, we generated statistical summaries for PubCaseFinder logs by obtaining the frequency of each HPO term to visualize the users' first 20 most-used HPO terms (Fig. 4). We also transformed all the HPO terms in the file to the main branches of HPO and calculated the percentages of terms used for each root (Fig. 5).
 
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
+For the first step of our statistical analysis, we noticed that the most used terms are: short stature, intellectual disability, and global developmental delay, in that order (ranging from 1.3% to 1.4%) from a total of 7,544 unique HPO terms from the whole file.
+
+After the first 20 most frequent terms, we observed a long-tail distribution, where each HPO term appeared with extremely lower frequencies compared with the most frequent ones. On average, each term has a frequency of approximately 0.01%. This type of distribution is valuable for gaining insight into the most frequent phenotypes observed in patients, but even more importantly, to learn which phenotypes are relevant for differential diagnosis.
+
+![Graph of the 20 most frequent HPO terms in the log file.
+Each line is a HPO term and the x axis represents its frequency in a percentage scale](./images/HPO_frequency_raw.png)
+
+
 
 ## Data Preprocessing
 

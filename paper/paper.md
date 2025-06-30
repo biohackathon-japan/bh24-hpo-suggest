@@ -100,7 +100,7 @@ We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
 ## Evaluation
 
-To evaluate the performance of our models after training with different datasets, we employed two validation strategies using the test dataset **(Fig. 3)**. 
+To evaluate the performance of our models after training with different datasets, we employed two validation strategies using the test dataset **(Fig. 4)**. 
 
 The first approach considered the order of the elements within each query. We then input each HPO term from the query into the model and assessed whether the next term in the query was part of the top-k predicted terms. 
 
@@ -114,7 +114,7 @@ These two evaluation approaches allowed us to compare the importance of the term
 # Results
 ## Data Preprocessing
 ### Data Collection
-During data preprocessing, we generated statistical summaries for PubCaseFinder logs by obtaining the frequency of each HPO term to visualize the users' first 20 most-used HPO terms (Fig. 4). We also transformed all the HPO terms in the file to the main branches of HPO and calculated the percentages of terms used for each root (Fig. 5).
+During data preprocessing, we generated statistical summaries for PubCaseFinder logs by obtaining the frequency of each HPO term to visualize the users' first 20 most-used HPO terms (Fig. 5). We also transformed all the HPO terms in the file to the main branches of HPO and calculated the percentages of terms used for each root (Fig. 6).
 
 For the first step of our statistical analysis, we noticed that the most used terms are: short stature, intellectual disability, and global developmental delay, in that order (ranging from 1.3% to 1.4%) from a total of 7,544 unique HPO terms from the whole file.
 
@@ -125,7 +125,7 @@ Each line is an HPO term, and the x axis represents its frequency in a percentag
 
 The goal of collapsing the HPO terms from the user queries into the main roots of the HPO is to analyze the percentage of unique HPO terms in our data, covering the total number of HPO terms in the Ontology. The purpose of translating each unique HPO term into its respective phenotypic abnormality root is to assess the coverage of PubCaseFinder queries and have a clearer idea of the potential of our model if we add more training data from future queries.
 
-After the analysis, we noticed that the unique HPO terms from the log file cover 55.7% of all the HPO terms in the HPO (10,222 HPO terms out of 18,354 from the Phenotypic Abnormality roots) (Fig. 5).  We noticed that the number of unique terms from the log file (7,544) differs from the HPO terms covered in the Phenotypic Abnormality roots because some terms belong to more than one root, so some terms are counted as more than one term when collapsing the HPO terms to their roots.
+After the analysis, we noticed that the unique HPO terms from the log file cover 55.7% of all the HPO terms in the HPO (10,222 HPO terms out of 18,354 from the Phenotypic Abnormality roots) (Fig. 6).  We noticed that the number of unique terms from the log file (7,544) differs from the HPO terms covered in the Phenotypic Abnormality roots because some terms belong to more than one root, so some terms are counted as more than one term when collapsing the HPO terms to their roots.
 
 The root with the highest representation in the users’ queries is growth abnormality (82.5%), and the most underrepresented root is Abnormality of metabolism/homeostasis (22.95%). This statistic provides insights into how well-informed our model is, to have a clearer way of evaluating our model’s performance and its potential to increase its prediction power when more data is added.
 
@@ -134,7 +134,7 @@ The root with the highest representation in the users’ queries is growth abnor
 ### Data Collapsing
 The data collapsing significantly reduced redundancy, with a 27.28% reduction in data after deduplication, and the number of queries collapsed from 71,029 to 51,647.
 
-We generated a scatter plot using a linear regression model to compare the frequency change after the data-collapsing process (Fig. 6). We also calculated the correlation coefficient between the HPO terms ratio from the original log file and the file with the collapsed queries. The correlation coefficient was 0.995, revealing that after the data cleaning, the HPO frequencies are proportional to the ones observed from the log file without curation, indicating a good collapsing process of the data without affecting the ratio of the terms, which is important for the construction of the co-occurrence matrix.
+We generated a scatter plot using a linear regression model to compare the frequency change after the data-collapsing process (Fig. 7). We also calculated the correlation coefficient between the HPO terms ratio from the original log file and the file with the collapsed queries. The correlation coefficient was 0.995, revealing that after the data cleaning, the HPO frequencies are proportional to the ones observed from the log file without curation, indicating a good collapsing process of the data without affecting the ratio of the terms, which is important for the construction of the co-occurrence matrix.
 
 ![Scatter plot comparing the ratios between HPO terms from the PubCaseFinder file with the processed dataset](./images/Scatter_plot.png)
 

@@ -138,6 +138,7 @@ We generated a scatter plot using a linear regression model to compare the frequ
 ![Scatter plot comparing the ratios between HPO terms from the PubCaseFinder file with the processed dataset](./images/Scatter_plot.png)
 
 Table: Summary comparison of data subsets
+
 | Data subset       | Number of rows | Avg. HPO terms/row | HPO Coverage (%) |
 |-------------------|----------------|---------------------|------------------|
 | Training data 1   | 33,733         | 4.17                | 48.99%           |

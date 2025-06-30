@@ -94,6 +94,7 @@ We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
 ### Word2Vec Model
 
+![Word2Vec model construction diagram](./images/Word2vec_construction.png)
 
 
 
@@ -147,6 +148,9 @@ Table: Summary comparison of data subsets
 | Test data         | 8,957          | 4.58                | 27.65%           |
 
 ### Model's Evaluation
+
+For strict accuracy (exact matches only), the co-occurrence model achieves 17.86% at k=10 (n=1), more than double Word2Vec’s 8.72%. This gap persists when using more terms as input for prediction (n=7), where co-occurrence maintains a 63% advantage (15.40% vs. 9.43%).
+When considering ontological relationships (using close HPO terms as an accurate prediction), co-occurrence again surpasses Word2vec, reaching 23.69% (n=3, k=10) compared to Word2Vec’s 10.90%. The co-occurrence model also scales better with more predictions (increasing 13.8% from k=1 to k=10 in contrast with Word2Vec’s with an augmentation of 10.7%).
 
 ![co-ocurrence model's performance](./images/co-ocurrence_results.png)
 

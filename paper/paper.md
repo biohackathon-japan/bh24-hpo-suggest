@@ -120,13 +120,30 @@ For the first step of our statistical analysis, we noticed that the most used te
 After the first 20 most frequent terms, we observed a long-tail distribution, where each HPO term appeared with extremely lower frequencies compared with the most frequent ones. On average, each term has a frequency of approximately 0.01%. This type of distribution is valuable for gaining insight into the most frequent phenotypes observed in patients, but even more importantly, to learn which phenotypes are relevant for differential diagnosis.
 
 ![Graph of the 20 most frequent HPO terms in the log file.
-Each line is a HPO term and the x axis represents its frequency in a percentage scale](./images/HPO_frequency_raw.png)
+Each line is an HPO term, and the x axis represents its frequency in a percentage scale](./images/HPO_frequency_raw.png)
 
+The goal of collapsing the HPO terms from the user queries into the main roots of the HPO is to analyze the percentage of unique HPO terms in our data, covering the total number of HPO terms in the Ontology. The purpose of translating each unique HPO term into its respective phenotypic abnormality root is to assess the coverage of PubCaseFinder queries and have a clearer idea of the potential of our model if we add more training data from future queries.
 
+After the analysis, we noticed that the unique HPO terms from the log file cover 55.7% of all the HPO terms in the HPO (10,222 HPO terms out of 18,354 from the Phenotypic Abnormality roots) (Fig. 5).  We noticed that the number of unique terms from the log file (7,544) differs from the HPO terms covered in the Phenotypic Abnormality roots because some terms belong to more than one root, so some terms are counted as more than one term when collapsing the HPO terms to their roots.
 
-## Data Preprocessing
+The root with the highest representation in the users’ queries is growth abnormality (82.5%), and the most underrepresented root is Abnormality of metabolism/homeostasis (22.95%). This statistic provides insights into how well-informed our model is, to have a clearer way of evaluating our model’s performance and its potential to increase its prediction power when more data is added.
 
-Please keep sections to a maximum of only two levels.
+![Graph of the percentage of HPO terms covered by each Phenotypic Abnormality root from the Human Phenotype Ontology](./images/Phenotypic_Abnormality_ratio.png)
+
+### Data Collapsing
+The data collapsing significantly reduced redundancy, with a 27.28% reduction in data after deduplication, and the number of queries collapsed from 71,029 to 51,647.
+
+We generated a scatter plot using a linear regression model to compare the frequency change after the data-collapsing process (Fig. 6). We also calculated the correlation coefficient between the HPO terms ratio from the original log file and the file with the collapsed queries. The correlation coefficient was 0.995, revealing that after the data cleaning, the HPO frequencies are proportional to the ones observed from the log file without curation, indicating a good collapsing process of the data without affecting the ratio of the terms, which is important for the construction of the co-occurrence matrix.
+
+![Scatter plot comparing the ratios between HPO terms from the PubCaseFinder file with the processed dataset](./images/Scatter_plot.png)
+
+Table: Summary comparison of data subsets
+| Data subset       | Number of rows | Avg. HPO terms/row | HPO Coverage (%) |
+|-------------------|----------------|---------------------|------------------|
+| Training data 1   | 33,733         | 4.17                | 48.99%           |
+| Training data 2   | 42,690         | 4.14                | 52.47%           |
+| Training data 3   | 46,362         | 8.83                | 88.93%           |
+| Test data         | 8,957          | 4.58                | 27.65%           |
 
 ## Co-occurrence Analysis
 

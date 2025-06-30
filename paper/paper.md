@@ -175,7 +175,7 @@ Future work could involve more sophisticated handling of semantic similarities b
 ...
 
 ## References
-@article{robinson2008human,
+@article{citation:robinson2008human,
   title={The Human Phenotype Ontology: a tool for annotating and analyzing human hereditary disease},
   author={Robinson, Peter N and K{\"o}hler, Sebastian and Bauer, Sebastian and Seelow, Dominik and Horn, Denise and Mundlos, Stefan},
   journal={The American Journal of Human Genetics},

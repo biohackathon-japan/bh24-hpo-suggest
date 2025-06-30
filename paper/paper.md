@@ -146,59 +146,25 @@ Table: Summary comparison of data subsets
 | Training data 3   | 46,362         | 8.83                | 88.93%           |
 | Test data         | 8,957          | 4.58                | 27.65%           |
 
-## Co-occurrence Analysis
+### Model's Evaluation
 
-Please keep sections to a maximum of only two levels.
+![co-ocurrence model's performance](./images/co-ocurrence_results.png)
 
-## Evaluation
-
-Please keep sections to a maximum of only two levels.
+![Word2Vec model's performance](./images/Word2Vec_model_results.png)
 
 
 # Discussion
 
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
-
-## Machine Learning Model
-
-Please keep sections to a maximum of only two levels.
 
 ## Data Redundancy
-
-Please keep sections to a maximum of only two levels.
+The significant reduction in query data after deduplication suggests that many PubCaseFinder queries are repetitive, potentially skewing the analysis. This indicates a need for continuous data cleaning and refinement.
+Importance of Order: The results indicated that preserving the order of HPO terms in queries is crucial for accurate prediction. Orion's approach of maintaining sequence integrity during co-occurrence analysis was particularly effective.
 
 ## Evaluation Metrics
-
-Please keep sections to a maximum of only two levels.
+The project also explored various evaluation methods, such as using the first term to predict subsequent terms or evaluating the model's accuracy across different thresholds. These methods provided a comprehensive understanding of the model's strengths and weaknesses.
 
 ## Next Steps
-
-Please keep sections to a maximum of only two levels.
-
-
-
-## Tables and figures
-
-Tables can be added in the following way, though alternatives are possible:
-
-Table: Note that table caption is automatically numbered and should be
-given before the table itself.
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-
-A figure is added with:
-
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
-
-# Other main section on your manuscript level 1
-
-Lists can be added with:
-
-1. Item 1
-2. Item 2
+Future work could involve more sophisticated handling of semantic similarities between HPO terms, as well as further refining the evaluation metrics to include measures like AUC or hits at N. Additionally, incorporating fuzzy term matching or hierarchical relationships could further improve suggestion accuracy.
 
 
 
@@ -209,3 +175,178 @@ Lists can be added with:
 ...
 
 ## References
+@article{robinson2008human,
+  title={The Human Phenotype Ontology: a tool for annotating and analyzing human hereditary disease},
+  author={Robinson, Peter N and K{\"o}hler, Sebastian and Bauer, Sebastian and Seelow, Dominik and Horn, Denise and Mundlos, Stefan},
+  journal={The American Journal of Human Genetics},
+  volume={83},
+  number={5},
+  pages={610--615},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{kohler2014human,
+  title={The Human Phenotype Ontology project: linking molecular biology and disease through phenotype data},
+  author={K{\"o}hler, Sebastian and Doelken, Sandra C and Mungall, Christopher J and Bauer, Sebastian and Firth, Helen V and Bailleul-Forestier, Isabelle and Black, Graeme CM and Brown, Danielle L and Brudno, Michael and Campbell, Jennifer and others},
+  journal={Nucleic acids research},
+  volume={42},
+  number={D1},
+  pages={D966--D974},
+  year={2014},
+  publisher={Oxford University Press}
+}
+
+@article{kohler2019expansion,
+  title={Expansion of the Human Phenotype Ontology (HPO) knowledge base and resources},
+  author={K{\"o}hler, Sebastian and Carmody, Leigh and Vasilevsky, Nicole and Jacobsen, Julius O B and Danis, Daniel and Gourdine, Jean-Philippe and Gargano, Michael and Harris, Nomi L and Matentzoglu, Nicolas and McMurry, Julie A and others},
+  journal={Nucleic acids research},
+  volume={47},
+  number={D1},
+  pages={D1018--D1027},
+  year={2019},
+  publisher={Oxford University Press}
+}
+
+@article{kohler2019encoding,
+  title={Encoding clinical data with the human phenotype ontology for computational differential diagnostics},
+  author={K{\"o}hler, Sebastian and {\O}ien, N Christine and Buske, Orion J and Groza, Tudor and Jacobsen, Julius OB and McNamara, Craig and Vasilevsky, Nicole and Carmody, Leigh C and Gourdine, JP and Gargano, Michael and others},
+  journal={Current protocols in human genetics},
+  volume={103},
+  number={1},
+  pages={e92},
+  year={2019},
+  publisher={Wiley Online Library}
+}
+
+@article{buske2015phenomecentral,
+  title={PhenomeCentral: a portal for phenotypic and genotypic matchmaking of patients with rare genetic diseases},
+  author={Buske, Orion J and Girdea, Marta and Dumitriu, Sergiu and Gallinger, Bailey and Hartley, Taila and Trang, Heather and Misyura, Andriy and Friedman, Tal and Beaulieu, Chandree and Bone, William P and others},
+  journal={Human mutation},
+  volume={36},
+  number={10},
+  pages={931--940},
+  year={2015},
+  publisher={Wiley Online Library}
+}
+
+@article{adachi2017japan,
+  title={Japan’s initiative on rare and undiagnosed diseases (IRUD): towards an end to the diagnostic odyssey},
+  author={Adachi, Takeya and Kawamura, Kazuo and Furusawa, Yoshihiko and Nishizaki, Yuji and Imanishi, Noriaki and Umehara, Senkei and Izumi, Kazuo and Suematsu, Makoto},
+  journal={European Journal of Human Genetics},
+  volume={25},
+  number={9},
+  pages={1025--1028},
+  year={2017},
+  publisher={Nature Publishing Group}
+}
+
+@article{boycott2022seven,
+  title={Seven years since the launch of the Matchmaker Exchange: The evolution of genomic matchmaking},
+  author={Boycott, Kym M and Azzariti, Danielle R and Hamosh, Ada and Rehm, Heidi L},
+  journal={Human mutation},
+  volume={43},
+  number={6},
+  pages={659--667},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+
+@article{fujiwara2018pubcasefinder,
+  title={PubCaseFinder: A case-report-based, phenotype-driven differential-diagnosis system for rare diseases},
+  author={Fujiwara, Toyofumi and Yamamoto, Yasunori and Kim, Jin-Dong and Buske, Orion and Takagi, Toshihisa},
+  journal={The American Journal of Human Genetics},
+  volume={103},
+  number={3},
+  pages={389--399},
+  year={2018},
+  publisher={Elsevier}
+}
+
+@article{fujiwara2022advances,
+  title={Advances in the development of PubCaseFinder, including the new application programming interface and matching algorithm},
+  author={Fujiwara, Toyofumi and Shin, Jae-Moon and Yamaguchi, Atsuko},
+  journal={Human Mutation},
+  volume={43},
+  number={6},
+  pages={734--742},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+
+@article{robinson2020interpretable,
+  title={Interpretable clinical genomics with a likelihood ratio paradigm},
+  author={Robinson, Peter N and Ravanmehr, Vida and Jacobsen, Julius OB and Danis, Daniel and Zhang, Xingmin Aaron and Carmody, Leigh C and Gargano, Michael A and Thaxton, Courtney L and Karlebach, Guy and Reese, Justin and others},
+  journal={The American Journal of Human Genetics},
+  volume={107},
+  number={3},
+  pages={403--417},
+  year={2020},
+  publisher={Elsevier}
+}
+
+@article{shen2017phenotypic,
+  title={Phenotypic analysis of clinical narratives using human phenotype ontology},
+  author={Shen, Feichen and Wang, Liwei and Liu, Hongfang},
+  journal={Studies in health technology and informatics},
+  volume={245},
+  pages={581},
+  year={2017},
+  publisher={NIH Public Access}
+}
+
+@article{son2018deep,
+  title={Deep phenotyping on electronic health records facilitates genetic diagnosis by clinical exomes},
+  author={Son, Jung Hoon and Xie, Gangcai and Yuan, Chi and Ena, Lyudmila and Li, Ziran and Goldstein, Andrew and Huang, Lulin and Wang, Liwei and Shen, Feichen and Liu, Hongfang and others},
+  journal={The American Journal of Human Genetics},
+  volume={103},
+  number={1},
+  pages={58--73},
+  year={2018},
+  publisher={Elsevier}
+}
+
+@article{steinhaus2022deep,
+  title={Deep phenotyping: symptom annotation made simple with SAMS},
+  author={Steinhaus, Robin and Proft, Sebastian and Seelow, Evelyn and Schalau, Tobias and Robinson, Peter N and Seelow, Dominik},
+  journal={Nucleic acids research},
+  volume={50},
+  number={W1},
+  pages={W677--W681},
+  year={2022},
+  publisher={Oxford University Press}
+}
+
+@article{wang2022deep,
+  title={Deep phenotyping and whole-exome sequencing improved the diagnostic yield for nuclear pedigrees with neurodevelopmental disorders},
+  author={Wang, Qingqing and Tang, Xia and Yang, Ke and Huo, Xiaodong and Zhang, Hui and Ding, Keyue and Liao, Shixiu},
+  journal={Molecular Genetics \& Genomic Medicine},
+  volume={10},
+  number={5},
+  pages={e1918},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+
+@article{havrilla2022phenominal,
+  title={PheNominal: an EHR-integrated web application for structured deep phenotyping at the point of care},
+  author={Havrilla, James M and Singaravelu, Anbumalar and Driscoll, Dennis M and Minkovsky, Leonard and Helbig, Ingo and Medne, Livija and Wang, Kai and Krantz, Ian and Desai, Bimal R},
+  journal={BMC Medical Informatics and Decision Making},
+  volume={22},
+  number={Suppl 2},
+  pages={198},
+  year={2022},
+  publisher={Springer}
+}
+
+@article{yuan2022evaluation,
+  title={Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases},
+  author={Yuan, Xiao and Wang, Jing and Dai, Bing and Sun, Yanfang and Zhang, Keke and Chen, Fangfang and Peng, Qian and Huang, Yixuan and Zhang, Xinlei and Chen, Junru and others},
+  journal={Briefings in Bioinformatics},
+  volume={23},
+  number={2},
+  pages={bbac019},
+  year={2022},
+  publisher={Oxford University Press}
+}
+

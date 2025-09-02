@@ -410,7 +410,6 @@ Future work could involve more sophisticated handling of semantic similarities b
   doi={10.1016/j.jbi.2019.103246}
 }
 
-
 @inproceedings{rehurek2010software,
   title={Software Framework for Topic Modelling with Large Corpora},
   author={Řehůřek, Radim and Sojka, Petr},

@@ -102,7 +102,6 @@ For this work, we utilized Word2vec, implemented in the Gensim library, and trea
 
 ### Training procedure
 
-The model was trained in two phases. We utilized the Word2Vec model implemented on the Gensim library [@citation:rehurek2010software]. During the initial phase, the CBOW method was trained with 50 epochs with a learning rate of 0.035, decaying linearly to 0.001. Additionally, the hierarchical softmax was enabled (hs=1), which is a binary tree representation that accelerates the training process, and negative sampling was applied (negative=5, ns_exponent=0.7) to prevent the model from overfitting on frequent terms [@citation:goldberg2014word2vec; @citation:mikolov2013efficient]. 
 
 Other key parameters on the model were set with a vector size of 128, a context window of 7, a minimum term frequency of 1 (min_count=1) to include rare HPO terms, a subsampling threshold of 1×10⁻⁵ to reduce the dominance of frequent terms in the training, and a batch size of 20,000 words. All parameters were set at these values through changes from standard values to the ones with the best prediction performance.
 

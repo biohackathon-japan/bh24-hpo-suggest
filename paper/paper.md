@@ -368,65 +368,53 @@ Future work could involve more sophisticated handling of semantic similarities b
   publisher={Oxford University Press}
 }
 
-@article{mikolov2013efficient,
-  title={Efficient Estimation of Word Representations in Vector Space},
-  author={Mikolov, Tomas and Corrado, Greg and Chen, Kai and Dean, Jeffrey},
-  year={2013},
-  note={arXiv preprint arXiv:1301.3781},
-  pages={12}
-}
-
-@article{gurbanli2025application,
-  title={Application of the Word2Vec Algorithm for Clinical Diagnosis Determination},
-  author={Gurbanli, Ulvi},
-  journal={Problems of Information Society},
-  volume={16},
-  pages={26--33},
-  year={2025},
-  doi={10.25045/jpis.v16.i1.03}
-}
-
-@article{ji2020literature,
-  title={Literature-Wide Association Studies (LWAS) for a Rare Disease: Drug Repurposing for Inflammatory Breast Cancer},
-  author={Ji, Xuezheng and Jin, Cheng and Dong, Xue and Dixon, Michael S. and Williams, K. Patrick and Zheng, Wei},
-  journal={Molecules},
-  volume={25},
-  number={17},
-  pages={3933},
-  year={2020},
-  publisher={MDPI},
-  doi={10.3390/molecules25173933}
-}
-
-@article{shen2019hpo2vec,
-  title={HPO2Vec+: Leveraging heterogeneous knowledge resources to enrich node embeddings for the Human Phenotype Ontology},
-  author={Shen, Feichen and Peng, Shanfeng and Fan, Yifan and Wen, An and Liu, Sheng and Wang, Yanshan and Wang, Liwei and Liu, Hongfang},
-  journal={Journal of Biomedical Informatics},
-  volume={96},
-  pages={103246},
-  year={2019},
-  publisher={Elsevier},
-  doi={10.1016/j.jbi.2019.103246}
-}
-
-@inproceedings{rehurek2010software,
-  title={Software Framework for Topic Modelling with Large Corpora},
-  author={Řehůřek, Radim and Sojka, Petr},
-  booktitle={Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks},
-  pages={45--50},
-  year={2010},
-  organization={ELRA},
-  doi={10.13140/2.1.2393.1847}
-}
-
-@misc{goldberg2014word2vec,
-  title={word2vec Explained: Deriving Mikolov et al.’s negative-sampling word-embedding method},
+@article{goldberg2014word2vec,
+  title={word2vec Explained: Deriving Mikolov et al.'s negative-sampling word-embedding method},
   author={Goldberg, Yoav and Levy, Omer},
+  journal={arXiv preprint arXiv:1402.3722},
   year={2014},
-  eprint={1402.3722},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  doi={10.48550/arXiv.1402.3722},
   publisher={arXiv}
 }
+
+@inproceedings{gurbanli2025application,
+  title={Application of the Word2Vec},
+  author={Gurbanli, Ulvi},
+  booktitle={Proceedings of the 7th International Conference on Computer Science and Engineering},
+  year={2025},
+  organization={IEEE}
+}
+
+@article{yan2021evaluation,
+  title={Evaluation of BERT and ALBERT sentence embedding performance on downstream biomedical text mining tasks},
+  author={Yan, Hang and Ding, Buzhou and Qin, Bing},
+  journal={Bioinformatics},
+  volume={37},
+  number={16},
+  pages={2792--2799},
+  year={2021},
+  publisher={Oxford University Press}
+}
+
+@article{lee2020biobert,
+  title={BioBERT: a pre-trained biomedical language representation model for biomedical text mining},
+  author={Lee, Jinhyuk and Yoon, Wonjin and Kim, Sungdong and Kim, Donghyeon and Kim, Sunkyu and So, Chan Ho and Kang, Jaewoo},
+  journal={Bioinformatics},
+  volume={36},
+  number={4},
+  pages={1234--1240},
+  year={2020},
+  publisher={Oxford University Press}
+}
+
+@article{peng2019transfer,
+  title={Transfer learning in biomedical natural language processing: an evaluation of BERT and ELMo on ten benchmarking datasets},
+  author={Peng, Yifan and Yan, Shankai and Lu, Zhiyong},
+  journal={Bioinformatics},
+  volume={36},
+  number={3},
+  pages={401--409},
+  year={2019},
+  publisher={Oxford University Press}
+}
+
 

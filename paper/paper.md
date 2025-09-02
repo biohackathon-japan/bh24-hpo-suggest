@@ -368,7 +368,7 @@ Future work could involve more sophisticated handling of semantic similarities b
   publisher={Oxford University Press}
 }
 
-@misc{mikolov2013efficient,
+@article{mikolov2013efficient,
   title={Efficient Estimation of Word Representations in Vector Space},
   author={Mikolov, Tomas and Corrado, Greg and Chen, Kai and Dean, Jeffrey},
   year={2013},

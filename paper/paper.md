@@ -101,12 +101,11 @@ Additionally, Word2vec has been tested using biomedical ontologies, including th
 For this work, we utilized Word2vec, implemented in the Gensim library, and treated the terms as a Continuous Bag-of-Words (CBOW) model. This means that the order in which the elements are provided for training does not impact the model’s projection layer [@citation:mikolov2013efficient]. Although Word2Vec provides two architectures for the model’s training, we decided to use CBOW and omit the Skip-gram model. CBOW has been proven to work more efficiently than the Skip-gram model and even achieves better accuracy in predicting frequent terms from the training data, predicting terms based on their surrounding context [@citation:mikolov2013efficient], which aligns with the way our data is structured, being based on phenotypic combinations.
 
 #### Training procedure
+The model was trained in two phases. We utilized the Word2Vec model implemented on the Gensim library [@citation:rehurek2010software]. During the initial phase, the CBOW method was trained for 50 epochs with a learning rate of 0.035, which was then diminished linearly to 0.001. Additionally, the hierarchical softmax was enabled (hs=1), which is a binary tree representation that accelerates the training process, and negative sampling was applied (negative=5, ns_exponent=0.7) to prevent the model from overfitting on frequent terms [@citation:goldberg2014word2vec; @citation:mikolov2013efficient]. 
 
+Other key parameters on the model were set with a vector size of 128, a context window of 7, a minimum term frequency of 1 (min_count=1) to include rare HPO terms, a subsampling threshold of \num{1e-5} to reduce the dominance of frequent terms in the training, and a batch size of 20,000 words. All parameters were set at these values through changes from standard values to the ones with the best prediction performance.
 
-
-The second stage consisted of fine-tuning the training model through a lower learning rate and fewer epochs (from 0.001 to 0.0001 and 20, respectively). This stage served to enhance and stabilize the model’s vector space, which is an intrinsic part of the model, through a decaying learning rate, but implemented on an additional second stage.
-
-
+The second stage involved fine-tuning the training model using a lower learning rate and fewer epochs (from 0.001 to 0.0001 and 20, respectively). This stage served to enhance and stabilize the model’s vector space, an intrinsic part of the model, through a decaying learning rate, implemented in an additional second stage.
 
 ![Word2Vec model construction diagram](./images/Word2vec_construction.png)
 
@@ -367,5 +366,67 @@ Future work could involve more sophisticated handling of semantic similarities b
   pages={bbac019},
   year={2022},
   publisher={Oxford University Press}
+}
+
+@misc{mikolov2013efficient,
+  title={Efficient Estimation of Word Representations in Vector Space},
+  author={Mikolov, Tomas and Corrado, Greg and Chen, Kai and Dean, Jeffrey},
+  year={2013},
+  note={arXiv preprint arXiv:1301.3781},
+  pages={12}
+}
+
+@article{gurbanli2025application,
+  title={Application of the Word2Vec Algorithm for Clinical Diagnosis Determination},
+  author={Gurbanli, Ulvi},
+  journal={Problems of Information Society},
+  volume={16},
+  pages={26--33},
+  year={2025},
+  doi={10.25045/jpis.v16.i1.03}
+}
+
+@article{ji2020literature,
+  title={Literature-Wide Association Studies (LWAS) for a Rare Disease: Drug Repurposing for Inflammatory Breast Cancer},
+  author={Ji, Xuezheng and Jin, Cheng and Dong, Xue and Dixon, Michael S. and Williams, K. Patrick and Zheng, Wei},
+  journal={Molecules},
+  volume={25},
+  number={17},
+  pages={3933},
+  year={2020},
+  publisher={MDPI},
+  doi={10.3390/molecules25173933}
+}
+
+@article{shen2019hpo2vec,
+  title={HPO2Vec+: Leveraging heterogeneous knowledge resources to enrich node embeddings for the Human Phenotype Ontology},
+  author={Shen, Feichen and Peng, Shanfeng and Fan, Yifan and Wen, An and Liu, Sheng and Wang, Yanshan and Wang, Liwei and Liu, Hongfang},
+  journal={Journal of Biomedical Informatics},
+  volume={96},
+  pages={103246},
+  year={2019},
+  publisher={Elsevier},
+  doi={10.1016/j.jbi.2019.103246}
+}
+
+@inproceedings{rehurek2010software,
+  title={Software Framework for Topic Modelling with Large Corpora},
+  author={Řehůřek, Radim and Sojka, Petr},
+  booktitle={Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks},
+  pages={45--50},
+  year={2010},
+  organization={ELRA},
+  doi={10.13140/2.1.2393.1847}
+}
+
+@misc{goldberg2014word2vec,
+  title={word2vec Explained: Deriving Mikolov et al.’s negative-sampling word-embedding method},
+  author={Goldberg, Yoav and Levy, Omer},
+  year={2014},
+  eprint={1402.3722},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  doi={10.48550/arXiv.1402.3722},
+  publisher={arXiv}
 }
 

@@ -94,20 +94,6 @@ We used queries from the collapsed file from May 2, 2024 to August 26, 2024.
 
 ### Word2Vec Model
 
-The use of Word2Vec as a machine learning model has been extensively used in the field of Natural Language Processing (NLP), due to its performance in generating helpful relationships within words and classifying them using multiple degrees of similarity [@citation:mikolov2013efficient]. Word2Vec’s applications are various and have proven its value in the field of rare diseases by its capacity to capture relevant relationships from scientific literature and electronic health records (EHRs). With this information, it has been able to provide key advances that span from clinical diagnosis [@citation:gurbanli2025application] to drug discovery of rare diseases [@citation:ji2020literature]. 
-
-Additionally, Word2vec has been tested using biomedical ontologies, including the Human Phenotype Ontology, to generate co-occurrence patterns between HPO terms and genetic disease information found on public databases like DECIPHER, OMIM, and Orphanet to generate a tool that can provide genotype-phenotype associations [@citation:shen2019hpo2vec].
-
-For this work, we utilized Word2vec, implemented in the Gensim library, and treated the terms as a Continuous Bag-of-Words (CBOW) model. This means that the order in which the elements are provided for training does not impact the model’s projection layer [@citation:mikolov2013efficient]. Although Word2Vec provides two architectures for the model’s training, we decided to use CBOW and omit the Skip-gram model. CBOW has been proven to work more efficiently than the Skip-gram model and even achieves better accuracy in predicting frequent terms from the training data, predicting terms based on their surrounding context [@citation:mikolov2013efficient], which aligns with the way our data is structured, being based on phenotypic combinations.
-
-### Training Procedure
-The model was trained in two phases. We utilized the Word2Vec model implemented on the Gensim library [@citation:rehurek2010software]. During the initial phase, the CBOW method was trained with 50 epochs with a learning rate of 0.035, decaying linearly to 0.001. Additionally, the hierarchical softmax was enabled (hs=1), which is a binary tree representation that accelerates the training process, and negative sampling was applied (negative=5, ns_exponent=0.7) to prevent the model from overfitting on frequent terms [@citation:goldberg2014word2vec; @citation:mikolov2013efficient] (Goldberg & Levy, 2014; Mikolov et al., 2013). 
-
-Other key parameters on the model were set with a vector size of 128, a context window of 7, a minimum term frequency of 1 (min_count=1) to include rare HPO terms, a subsampling threshold of 1×10⁻⁵ to reduce the dominance of frequent terms in the training, and a batch size of 20,000 words. All parameters were set at these values through changes from standard values to the ones with the best prediction performance.
-
-The second stage consisted of fine-tuning the training model through a lower learning rate and fewer epochs (from 0.001 to 0.0001 and 20, respectively). This stage served to enhance and stabilize the model’s vector space, which is an intrinsic part of the model, through a decaying learning rate, but implemented on an additional second stage.
-
-
 ![Word2Vec model construction diagram](./images/Word2vec_construction.png)
 
 

@@ -100,7 +100,7 @@ Additionally, Word2vec has been tested using biomedical ontologies, including th
 
 For this work, we utilized Word2vec, implemented in the Gensim library, and treated the terms as a Continuous Bag-of-Words (CBOW) model. This means that the order in which the elements are provided for training does not impact the model’s projection layer [@citation:mikolov2013efficient]. Although Word2Vec provides two architectures for the model’s training, we decided to use CBOW and omit the Skip-gram model. CBOW has been proven to work more efficiently than the Skip-gram model and even achieves better accuracy in predicting frequent terms from the training data, predicting terms based on their surrounding context [@citation:mikolov2013efficient], which aligns with the way our data is structured, being based on phenotypic combinations.
 
-### Training procedure
+#### Training procedure
 
 
 

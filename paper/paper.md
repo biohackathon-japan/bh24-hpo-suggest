@@ -103,7 +103,6 @@ For this work, we utilized Word2vec, implemented in the Gensim library, and trea
 ### Training procedure
 
 
-Other key parameters on the model were set with a vector size of 128, a context window of 7, a minimum term frequency of 1 (min_count=1) to include rare HPO terms, a subsampling threshold of 1×10⁻⁵ to reduce the dominance of frequent terms in the training, and a batch size of 20,000 words. All parameters were set at these values through changes from standard values to the ones with the best prediction performance.
 
 The second stage consisted of fine-tuning the training model through a lower learning rate and fewer epochs (from 0.001 to 0.0001 and 20, respectively). This stage served to enhance and stabilize the model’s vector space, which is an intrinsic part of the model, through a decaying learning rate, but implemented on an additional second stage.
 

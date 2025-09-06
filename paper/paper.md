@@ -162,10 +162,19 @@ Table: Summary comparison of data subsets
 
 ### Model's Evaluation
 
-For strict accuracy (exact matches only), the co-occurrence model achieves 17.86% at k=10 (n=1), more than double Word2Vec’s 8.72%. This gap persists when using more terms as input for prediction (n=7), where co-occurrence maintains a 63% advantage (15.40% vs. 9.43%).
-When considering ontological relationships (using close HPO terms as an accurate prediction), co-occurrence again surpasses Word2vec, reaching 23.69% (n=3, k=10) compared to Word2Vec’s 10.90%. The co-occurrence model also scales better with more predictions (increasing 13.8% from k=1 to k=10 in contrast with Word2Vec’s with an augmentation of 10.7%).
 
-![The image summarizes the results of the two models, using tha training data 2 and considering close HPO terms as incorrect](./images/models_performance.png)
+In this study, we report the results obtained using Training Data 2, which encompasses the full set of training PubCaseFinder queries. In contrast, we noticed a diminished performance using the dataset 1 for training (~9,000 fewer user queries compared to Training Data 2). This comparison shows that increasing the size of the training data for both models leads to improved accuracy performance, highlighting the importance of incrementing our training data for better performance (Fig. 8).
+
+Overall, we noticed that the predictive performance of both models increased when we evaluated the accuracy when predicting any of the remaining terms in the user query (Any Term Prediction, AP), as opposed to predicting the next term in the query (Next Term Prediction, NP). This suggests that the order of the terms is not important for the prediction, but the specific combination of terms.
+
+For both Co-occurrence and Word2Vec models, when the model provides more predicted terms (k), it improves the likelihood of correct predictions (counting only exact HPO matches as correct, and not close terms in the ontology), improves the accuracy of correct predictions. In the AP evaluation, the best prediction performance was achieved with the biggest number of input terms (n=7) and k=10. The Co-occurrence model obtained a maximum accuracy of 40.15%, leaving behind the Word2Vec model, which reached 23.09%.
+
+On the other hand, in the NP evaluation, performance showed variable accuracy percentages and did not show the same improvement pattern observed before on the AP setting. The Co-occurrence model achieved its highest NP accuracy at 23.44% ( n=3 and k=10), whereas Word2Vec obtained a top accuracy of 13.04% (n=2 and k=10).
+
+In summary, the Co-ocurrence model outperformed the Wor2Vec model in all the conditions using the training data from the PubCase Finder Browser, specifically when using a bigger dataset for training. This suggests that a co-occurrence model is more suitable for predicting HPO terms using our data than the machine learning model employed here.
+
+
+![The image summarizes the results of the two models, using tha training data 2 and we considered close HPO terms as incorrect predictions](./images/models_performance.png)
 
 
 # Discussion
